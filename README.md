@@ -8,6 +8,12 @@ I wanted to backup all my Obsidian data to either OneDrive or Google Drive using
 
 This script essentially gets rid of that problem by only backing up whenever you want to. If you're working with extremely important data or just can't be bothered with manual backups, you could also set up a cron job to do it for you.
 
+Another additional plus point is if you don't trust the cloud storage / git with your data, you can go ahead and encrypt your data locally before using a cloud solution. Whatever floats your boat.
+
+## Why encrypt?
+
+Even if you trust your cloud solution with everything, you absolutely should not trust it with this can contain some pretty private and damning information, if someone does pick it up. Simple AES encryption should do the trick.
+
 # Why Python?
 
 Python is the language that I understand well and is easily cross platform compatible. One only needs to change the shell script to ensure that it runs on their system.
