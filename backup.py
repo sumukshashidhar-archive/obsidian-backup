@@ -78,7 +78,7 @@ def folder_backup():
     """
     doc_path = os.getenv("OBSIDIAN_FOLDER")
     bck_path = os.getenv("TMP_PATH")
-    os.system(f"cp -R {doc_path} {bck_path}/")
+    os.system(f"cp -R {doc_path} {bck_path}")
     return
 
 def folder_delete():
@@ -109,6 +109,7 @@ def git_copy():
     
     # now we will copy the folder path as a whole
     os.system(f"cp -R {bck_path} {git_path}")
+    os.system(f'cd {git_path} && git add . && git commit -m "backup" && git pull && git push')
 
     
 def backup_to_loc():
@@ -123,12 +124,11 @@ def backup_to_loc():
         encrypt()
     else:
         pass
-
     if os.getenv("FOLDER_BACKUP").upper() in "YES":
         final_copy()
     if os.getenv("GIT_BACKUP").upper() in "YES":
         git_copy()
-    folder_delete()
+    # folder_delete()
 
 
 
