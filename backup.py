@@ -19,7 +19,7 @@ def write_key():
     write a new key to the key location when needed.
     """
     key = Fernet.generate_key()
-    with open(os.getenv("KEY_PATH"), "wb") as key_file:
+    with open(os.getenv("KEY_PATH"), "wb+") as key_file:
         key_file.write(key)
 
 
@@ -120,7 +120,7 @@ def backup_to_loc():
     folder_backup() # to create a temp folder
     if os.getenv("ENCRYPT") == "YES":
         # we need to proceed with encryption
-        pass
+        encrypt()
     else:
         pass
 
