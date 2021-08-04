@@ -100,7 +100,7 @@ def final_copy():
 def git_copy():
     bck_path = os.getenv("TMP_PATH")
     git_path = os.getenv("GIT_FOLDER")
-    git_repo = os.getnev("GIT_REPO")
+    git_repo = os.getenv("GIT_REPO")
     if os.path.isdir(git_path):
         # mainly to get rid of any outliers or changes
         os.system(f'cd {git_path} && git add . && git commit -m "backup" && git pull && git push')
